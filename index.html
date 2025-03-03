@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -19,6 +20,13 @@
         header {
             padding: 20px;
             font-size: 1.5em;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            background: linear-gradient(90deg, #FFEB3B, #FF9800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
         }
         .tagline {
             background: #FF9800;
@@ -26,13 +34,15 @@
             padding: 5px 15px;
             border-radius: 20px;
             font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
         main {
             padding: 40px;
-        }
-        h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
         }
         .features {
             display: flex;
@@ -46,10 +56,11 @@
             padding: 20px;
             border-radius: 10px;
             width: 250px;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .feature:hover {
-            transform: scale(1.05);
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
         }
         .cta {
             margin-top: 30px;
@@ -59,6 +70,7 @@
             border-radius: 5px;
             border: none;
             margin-right: 10px;
+            outline: none;
         }
         button {
             padding: 10px 15px;
@@ -68,10 +80,11 @@
             font-weight: bold;
             border-radius: 5px;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: background 0.3s ease, transform 0.2s;
         }
         button:hover {
             background: #E68900;
+            transform: scale(1.05);
         }
         footer {
             margin-top: 40px;
@@ -92,17 +105,17 @@
         <p>L'application qui transforme votre frigo en allié anti-gaspi.</p>
         
         <div class="features">
-            <div class="feature">
+            <div class="feature slide-left">
                 <span>📱</span>
                 <h3>Scan intelligent</h3>
                 <p>Suivez vos produits et leurs dates de péremption.</p>
             </div>
-            <div class="feature">
+            <div class="feature slide-up">
                 <span>🤖</span>
                 <h3>Recettes IA</h3>
                 <p>Des idées culinaires adaptées à vos stocks.</p>
             </div>
-            <div class="feature">
+            <div class="feature slide-right">
                 <span>🛒</span>
                 <h3>Sync Drive</h3>
                 <p>Intégration avec vos enseignes préférées.</p>
@@ -119,5 +132,11 @@
     <footer>
         <p>&copy; 2025 StockChef - Réduisons le gaspillage ensemble</p>
     </footer>
+
+    <script>
+        gsap.from(".slide-left", { opacity: 0, duration: 1, x: -50, stagger: 0.3 });
+        gsap.from(".slide-up", { opacity: 0, duration: 1, y: 50, stagger: 0.3 });
+        gsap.from(".slide-right", { opacity: 0, duration: 1, x: 50, stagger: 0.3 });
+    </script>
 </body>
 </html>
