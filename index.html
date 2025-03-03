@@ -3,150 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StockChef - Votre assistant anti-gaspi intelligent</title>
+    <title>StockChef - Anti-Gaspi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        * {
+        body {
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            color: white;
+            text-align: center;
         }
-
-        body {
-            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
-            color: #fff;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
         header {
-            text-align: center;
-            padding: 2rem 0;
+            padding: 20px;
+            font-size: 1.5em;
         }
-
-        .logo {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 4rem 0;
-        }
-
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .badge {
-            background: #e67e22;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
+        .tagline {
+            background: #FF9800;
             display: inline-block;
-            margin: 1rem 0;
+            padding: 5px 15px;
+            border-radius: 20px;
             font-weight: bold;
         }
-
+        main {
+            padding: 40px;
+        }
+        h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
         .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
         }
-
-        .feature-card {
+        .feature {
             background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            transition: transform 0.3s ease;
         }
-
-        .cta-form {
-            max-width: 500px;
-            margin: 2rem auto;
-            text-align: center;
+        .feature:hover {
+            transform: scale(1.05);
         }
-
-        input[type="email"] {
-            padding: 1rem;
-            width: 70%;
+        .cta {
+            margin-top: 30px;
+        }
+        input {
+            padding: 10px;
+            border-radius: 5px;
             border: none;
-            border-radius: 25px 0 0 25px;
+            margin-right: 10px;
         }
-
         button {
-            padding: 1rem 2rem;
-            background: #e67e22;
+            padding: 10px 15px;
+            background: #FF9800;
             border: none;
             color: white;
-            border-radius: 0 25px 25px 0;
+            font-weight: bold;
+            border-radius: 5px;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background 0.3s ease;
         }
-
         button:hover {
-            background: #d35400;
+            background: #E68900;
         }
-
         footer {
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 4rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">
-                🧑🍳 StockChef
+    <header>
+        <h1>👨‍🍳🔍 StockChef</h1>
+        <p class="tagline">Lancement prévu en 2025</p>
+    </header>
+    
+    <main>
+        <h2>Ne gaspillez plus, cuisinez malin !</h2>
+        <p>L'application qui transforme votre frigo en allié anti-gaspi.</p>
+        
+        <div class="features">
+            <div class="feature">
+                <span>📱</span>
+                <h3>Scan intelligent</h3>
+                <p>Suivez vos produits et leurs dates de péremption.</p>
             </div>
-        </header>
-
-        <section class="hero">
-            <div class="badge">🚀 Lancement prévu en 2025</div>
-            <h1>Ne jetez plus jamais de nourriture</h1>
-            <p>L'app qui transforme votre frigo en allié anti-gaspi</p>
-            
-            <div class="features">
-                <div class="feature-card">
-                    <h3>📱 Scan intelligent</h3>
-                    <p>Suivez vos produits et leurs dates de péremption</p>
-                </div>
-                <div class="feature-card">
-                    <h3>🧠 Recettes IA</h3>
-                    <p>Des idées culinaires adaptées à vos stocks</p>
-                </div>
-                <div class="feature-card">
-                    <h3>🛒 Sync Drive</h3>
-                    <p>Intégration avec vos enseignes préférées</p>
-                </div>
+            <div class="feature">
+                <span>🤖</span>
+                <h3>Recettes IA</h3>
+                <p>Des idées culinaires adaptées à vos stocks.</p>
             </div>
-
-            <div class="cta-form">
-                <h2>Soyez informé du lancement !</h2>
-                <form>
-                    <input type="email" placeholder="Votre email...">
-                    <button>Prévenir !</button>
-                </form>
+            <div class="feature">
+                <span>🛒</span>
+                <h3>Sync Drive</h3>
+                <p>Intégration avec vos enseignes préférées.</p>
             </div>
-        </section>
+        </div>
 
-        <footer>
-            <p>© 2025 StockChef - 🍳 Réduisons le gaspillage ensemble</p>
-            <p>🚧 Site en construction - Revenez vite !</p>
-        </footer>
-    </div>
+        <div class="cta">
+            <p>Restez informé du lancement :</p>
+            <input type="email" placeholder="Votre email...">
+            <button>S'inscrire</button>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 StockChef - Réduisons le gaspillage ensemble</p>
+    </footer>
 </body>
 </html>
