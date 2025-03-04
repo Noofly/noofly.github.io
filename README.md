@@ -3,7 +3,7 @@
 **Votre assistant intelligent contre le gaspillage alimentaire**  
 
 <p align="center">
-  <img src="images/android-chrome-512x512.png" alt="Logo StockChef" width="200">
+  <img src="images/logo/android-chrome-512x512.png" alt="Logo StockChef" width="200">
 </p>
 
 ## 📱 À propos du projet
