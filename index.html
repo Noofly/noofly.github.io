@@ -1,142 +1,44 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StockChef - Anti-Gaspi</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #4CAF50, #2E7D32);
-            color: white;
-            text-align: center;
-        }
-        header {
-            padding: 20px;
-            font-size: 1.5em;
-            background: rgba(0, 0, 0, 0.2);
-        }
-        h1 {
-            background: linear-gradient(90deg, #FFEB3B, #FF9800);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 600;
-        }
-        .tagline {
-            background: #FF9800;
-            display: inline-block;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-        main {
-            padding: 40px;
-        }
-        .features {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-        .feature {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            width: 250px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .feature:hover {
-            transform: scale(1.1);
-            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
-        }
-        .cta {
-            margin-top: 30px;
-        }
-        input {
-            padding: 10px;
-            border-radius: 5px;
-            border: none;
-            margin-right: 10px;
-            outline: none;
-        }
-        button {
-            padding: 10px 15px;
-            background: #FF9800;
-            border: none;
-            color: white;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s ease, transform 0.2s;
-        }
-        button:hover {
-            background: #E68900;
-            transform: scale(1.05);
-        }
-        footer {
-            margin-top: 40px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            font-size: 0.9em;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>👨‍🍳🔍 StockChef</h1>
-        <p class="tagline">Lancement prévu en 2025</p>
-    </header>
-    
-    <main>
-        <h2>Ne gaspillez plus, cuisinez malin !</h2>
-        <p>L'application qui transforme votre frigo en allié anti-gaspi.</p>
-        
-        <div class="features">
-            <div class="feature slide-left">
-                <span>📱</span>
-                <h3>Scan intelligent</h3>
-                <p>Suivez vos produits et leurs dates de péremption.</p>
-            </div>
-            <div class="feature slide-up">
-                <span>🤖</span>
-                <h3>Recettes IA</h3>
-                <p>Des idées culinaires adaptées à vos stocks.</p>
-            </div>
-            <div class="feature slide-right">
-                <span>🛒</span>
-                <h3>Sync Drive</h3>
-                <p>Intégration avec vos enseignes préférées.</p>
-            </div>
-        </div>
+<!DOCTYPE HTML>
+<!--
+	Eventually by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>StockChef</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="icon" href="/images/logo/favicon.ico">
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
 
-        <div class="cta">
-            <p>Restez informé du lancement :</p>
-            <input type="email" placeholder="Votre email...">
-            <button>S'inscrire</button>
-        </div>
-    </main>
-    
-    <footer>
-        <p>&copy; 2025 StockChef - Réduisons le gaspillage ensemble</p>
-    </footer>
+		<!-- Header -->
+			<header id="header">
+				<h1>StockChef</h1>
+				<h3>L'application qui transforme votre frigo en allié anti-gaspi.<br>Ne gaspillez plus, cuisinez malin !</h3>
+			</header>
 
-    <script>
-        gsap.from(".slide-left", { opacity: 0, duration: 1, x: -50, stagger: 0.3 });
-        gsap.from(".slide-up", { opacity: 0, duration: 1, y: 50, stagger: 0.3 });
-        gsap.from(".slide-right", { opacity: 0, duration: 1, x: 50, stagger: 0.3 });
-    </script>
-</body>
+			<div>
+				<h7>Lancement prévu en 2025</h7>
+			</div>
+
+		<!-- Signup Form -->
+			<form id="signup-form" method="post" action="https://formspree.io/f/xovjgopn">
+				<input type="email" name="email" id="email" placeholder="Adresse mail" />
+				<input type="submit" value="Se pré-inscrire" />
+			</form>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="copyright">
+					<li>&copy; 2025 StockChef.</li><li>Réduisons le gaspillage ensemble</li><li>Crédits: Template modifié de <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
