@@ -31,5 +31,5 @@
    [http://www.stockchef.fr](http://www.stockchef.fr)
 2. Inscrivez-vous pour être alerté du lancement 📧
 
-📬 Contact
+## 📬 Contact
 Email : contact@stockchef.fr
