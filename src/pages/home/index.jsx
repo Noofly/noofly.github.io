@@ -64,7 +64,7 @@ const HomepageInteractiveDeveloperShowcase = () => {
       greeting: getTimeBasedGreeting(),
       location: visitorLocation ? `à ${visitorLocation}` : '',
       heroTitle: constants.citation_fr,
-      heroSubtitle: "Automatisaton • IA • Blockchain",
+      heroSubtitle: "Automatisation • IA • Blockchain",
       heroDescription: "Développeur passionné par l'automatisation, l'intelligence artificielle et la blockchain, je crée des solutions simples, utiles et robustes pour répondre à des besoins concrets.",
       ctaText: "Explorez mon travail",
       projectsTitle: "Projets vedettes",
