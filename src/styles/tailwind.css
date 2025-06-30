@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --color-primary: #1a365d; /* Deep navy (primary) - blue-900 */
+    --color-primary-50: #ebf4ff; /* Light navy (50-level shade) - blue-50 */
+    --color-primary-100: #dbeafe; /* Light navy (100-level shade) - blue-100 */
+    --color-primary-200: #bfdbfe; /* Light navy (200-level shade) - blue-200 */
+    --color-primary-500: #3b82f6; /* Medium navy (500-level shade) - blue-500 */
+    --color-primary-600: #2563eb; /* Medium navy (600-level shade) - blue-600 */
+    --color-primary-700: #1d4ed8; /* Dark navy (700-level shade) - blue-700 */
+    --color-primary-800: #1e40af; /* Dark navy (800-level shade) - blue-800 */
+    --color-primary-900: #1e3a8a; /* Darkest navy (900-level shade) - blue-900 */
+
+    /* Secondary Colors */
+    --color-secondary: #2d3748; /* Charcoal (secondary) - gray-700 */
+    --color-secondary-50: #f9fafb; /* Light charcoal (50-level shade) - gray-50 */
+    --color-secondary-100: #f3f4f6; /* Light charcoal (100-level shade) - gray-100 */
+    --color-secondary-200: #e5e7eb; /* Light charcoal (200-level shade) - gray-200 */
+    --color-secondary-500: #6b7280; /* Medium charcoal (500-level shade) - gray-500 */
+    --color-secondary-600: #4b5563; /* Medium charcoal (600-level shade) - gray-600 */
+    --color-secondary-700: #374151; /* Dark charcoal (700-level shade) - gray-700 */
+    --color-secondary-800: #1f2937; /* Dark charcoal (800-level shade) - gray-800 */
+    --color-secondary-900: #111827; /* Darkest charcoal (900-level shade) - gray-900 */
+
+    /* Accent Colors */
+    --color-accent: #3182ce; /* Electric blue (accent) - blue-600 */
+    --color-accent-50: #eff6ff; /* Light electric blue (50-level shade) - blue-50 */
+    --color-accent-100: #dbeafe; /* Light electric blue (100-level shade) - blue-100 */
+    --color-accent-200: #bfdbfe; /* Light electric blue (200-level shade) - blue-200 */
+    --color-accent-500: #3b82f6; /* Medium electric blue (500-level shade) - blue-500 */
+    --color-accent-600: #2563eb; /* Medium electric blue (600-level shade) - blue-600 */
+    --color-accent-700: #1d4ed8; /* Dark electric blue (700-level shade) - blue-700 */
+    --color-accent-800: #1e40af; /* Dark electric blue (800-level shade) - blue-800 */
+    --color-accent-900: #1e3a8a; /* Darkest electric blue (900-level shade) - blue-900 */
+
+    /* Background Colors */
+    --color-background: #ffffff; /* Pure white (background) - white */
+    --color-surface: #f7fafc; /* Subtle gray (surface) - gray-50 */
+
+    /* Text Colors */
+    --color-text-primary: #1a202c; /* Near-black (text primary) - gray-900 */
+    --color-text-secondary: #4a5568; /* Medium gray (text secondary) - gray-600 */
+
+    /* Status Colors */
+    --color-success: #38a169; /* Forest green (success) - green-600 */
+    --color-success-50: #f0fff4; /* Light forest green (50-level shade) - green-50 */
+    --color-success-100: #c6f6d5; /* Light forest green (100-level shade) - green-100 */
+    --color-success-500: #48bb78; /* Medium forest green (500-level shade) - green-500 */
+    --color-success-600: #38a169; /* Medium forest green (600-level shade) - green-600 */
+    --color-success-700: #2f855a; /* Dark forest green (700-level shade) - green-700 */
+
+    --color-warning: #d69e2e; /* Amber (warning) - yellow-600 */
+    --color-warning-50: #fffbeb; /* Light amber (50-level shade) - yellow-50 */
+    --color-warning-100: #fef3c7; /* Light amber (100-level shade) - yellow-100 */
+    --color-warning-500: #f59e0b; /* Medium amber (500-level shade) - yellow-500 */
+    --color-warning-600: #d97706; /* Medium amber (600-level shade) - yellow-600 */
+    --color-warning-700: #b45309; /* Dark amber (700-level shade) - yellow-700 */
+
+    --color-error: #e53e3e; /* Warm red (error) - red-600 */
+    --color-error-50: #fef2f2; /* Light warm red (50-level shade) - red-50 */
+    --color-error-100: #fee2e2; /* Light warm red (100-level shade) - red-100 */
+    --color-error-500: #ef4444; /* Medium warm red (500-level shade) - red-500 */
+    --color-error-600: #dc2626; /* Medium warm red (600-level shade) - red-600 */
+    --color-error-700: #b91c1c; /* Dark warm red (700-level shade) - red-700 */
+
+    /* CTA Color */
+    --color-cta: #ed8936; /* Warm orange (CTA) - orange-500 */
+    --color-cta-50: #fffaf0; /* Light warm orange (50-level shade) - orange-50 */
+    --color-cta-100: #feebc8; /* Light warm orange (100-level shade) - orange-100 */
+    --color-cta-500: #ed8936; /* Medium warm orange (500-level shade) - orange-500 */
+    --color-cta-600: #dd6b20; /* Medium warm orange (600-level shade) - orange-600 */
+    --color-cta-700: #c05621; /* Dark warm orange (700-level shade) - orange-700 */
+  }
+
+  html {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  code, pre {
+    font-family: 'Fira Code', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 ease-out hover:bg-accent-700 hover:transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2;
+  }
+
+  .btn-cta {
+    @apply bg-cta text-white font-semibold px-4 py-2 rounded-lg shadow-md transition-all duration-300 transform-gpu;
+    @apply hover:bg-cta-600 hover:shadow-xl hover:scale-105;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-sm border border-secondary-200 p-6 transition-all duration-300 ease-out hover:shadow-md;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .shadow-subtle {
+    box-shadow: 0 4px 6px -1px rgba(26, 54, 93, 0.07), 0 2px 4px -1px rgba(26, 54, 93, 0.06);
+  }
+
+  .shadow-elevated {
+    box-shadow: 0 10px 15px -3px rgba(26, 54, 93, 0.15), 0 4px 6px -2px rgba(26, 54, 93, 0.05);
+  }
+
+  .shadow-modal {
+    box-shadow: 0 25px 50px -12px rgba(26, 54, 93, 0.25);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 600ms ease-out;
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
