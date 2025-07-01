@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes as RouterRoutes, Route } from "react-router-dom";
+import { HashRouter, Routes as RouterRoutes, Route } from "react-router-dom";
 import ScrollToTop from "components/ScrollToTop";
 import ErrorBoundary from "components/ErrorBoundary";
 import Header from "components/ui/Header";
@@ -12,20 +12,21 @@ import ContactPage from "pages/contact";
 
 const Routes = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ErrorBoundary>
         <ScrollToTop />
         <Header />
         <RouterRoutes>
           <Route path="/" element={<HomepageInteractiveDeveloperShowcase />} />
           <Route path="/portfolio" element={<PortfolioProjectUniverse />} />
+          <Route path="/portfolio/:id" element={<PortfolioProjectUniverse />} />
           <Route path="/about" element={<AboutTechnicalEvolutionJourney />} />
           <Route path="/experiments" element={<InteractiveSkillsLabPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<NotFound />} />
         </RouterRoutes>
       </ErrorBoundary>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 

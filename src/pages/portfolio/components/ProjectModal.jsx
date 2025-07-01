@@ -9,6 +9,8 @@ const ProjectModal = ({ project, onClose, initialTab = 'overview' }) => {
   const [activeTab, setActiveTab] = useState(initialTab);
   const { currentLanguage } = useLanguage();
 
+  if (!project) return null;
+
   const t = {
     tabs: {
       overview: { en: 'Overview', fr: 'Aperçu' },
@@ -83,7 +85,8 @@ const ProjectModal = ({ project, onClose, initialTab = 'overview' }) => {
 
   const handleShare = () => {
     const url = new URL(window.location.href);
-    url.searchParams.set('id', project.id);
+    url.hash = `#/portfolio/${project.id}`;
+    url.search = '';
     const shareUrl = url.toString();
     const shareTitle = project.title[currentLanguage];
     const shareText = project.shortDescription ? project.shortDescription[currentLanguage] : '';

@@ -52,7 +52,7 @@ const FeaturedProjectsCarousel = ({ currentLanguage }) => {
       <div className="bg-white rounded-2xl shadow-elevated border border-secondary-200 overflow-hidden mb-8">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           {/* Project Image */}
-          <div className="relative overflow-hidden group" style={{ cursor: 'pointer' }} onClick={() => navigate(`/portfolio?id=${currentProject.id}`)}>
+          <div className="relative overflow-hidden group" style={{ cursor: 'pointer' }} onClick={() => navigate(`/portfolio/${currentProject.id}`)}>
             <Image
               src={currentProject.image}
               alt={currentProject.title}
@@ -105,7 +105,7 @@ const FeaturedProjectsCarousel = ({ currentLanguage }) => {
             {/* Action Buttons */}
             <div className="flex space-x-4">
               <Link
-                to={`/portfolio?id=${currentProject.id}`}
+                to={`/portfolio/${currentProject.id}`}
                 className="btn-primary flex items-center space-x-2"
               >
                 <Icon name="Eye" size={18} />

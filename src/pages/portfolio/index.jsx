@@ -9,7 +9,7 @@ import ProjectMetrics from './components/ProjectMetrics';
 import Footer from '../../components/ui/Footer';
 import { projects } from '../../data/projects';
 import { useLanguage } from '../../components/LanguageContext';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams, useNavigate } from 'react-router-dom';
 
 const CATEGORY_LABELS = {
   'web-app': { en: 'Web Applications', fr: 'Applications Web' },
@@ -42,6 +42,8 @@ const PortfolioProjectUniverse = () => {
   const [sortBy, setSortBy] = useState('featured');
   const [initialTab, setInitialTab] = useState('overview');
   const location = useLocation();
+  const params = useParams();
+  const navigate = useNavigate();
 
   const filterOptions = getCategoryFilters(projects, currentLanguage);
 
@@ -92,11 +94,13 @@ const PortfolioProjectUniverse = () => {
     setSelectedProject(project);
     setInitialTab(tab);
     setIsModalOpen(true);
+    navigate(`/portfolio/${project.id}`);
   };
 
   const closeProjectModal = () => {
     setIsModalOpen(false);
     setTimeout(() => setSelectedProject(null), 300);
+    navigate('/portfolio');
   };
 
   useEffect(() => {
@@ -112,17 +116,18 @@ const PortfolioProjectUniverse = () => {
 
   // Ouvre le modal si un id est présent dans l'URL
   useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const id = params.get('id');
-    if (id) {
-      const project = projects.find(p => String(p.id) === String(id));
+    if (params.id) {
+      const project = projects.find(p => String(p.id) === String(params.id));
       if (project) {
         setSelectedProject(project);
         setInitialTab('overview');
         setIsModalOpen(true);
       }
+    } else {
+      setIsModalOpen(false);
+      setSelectedProject(null);
     }
-  }, [location.search]);
+  }, [params.id]);
 
   return (
     <div className="min-h-screen bg-surface">
@@ -240,8 +245,7 @@ const PortfolioProjectUniverse = () => {
               <p className="text-text-secondary max-w-md mx-auto mb-8">
                 {currentLanguage === 'en' 
                   ? "Try adjusting your search terms or filters to find the projects you're looking for."
-                  : "Essayez d'ajuster vos termes de recherche ou filtres pour trouver les projets que vous recherchez."
-                }
+                  : "Essayez d'ajuster vos termes de recherche ou filtres pour trouver les projets que vous recherchez."}
               </p>
               <button
                 onClick={() => {
